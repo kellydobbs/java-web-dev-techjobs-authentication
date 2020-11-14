@@ -25,6 +25,12 @@ public class HomeController {
         model.addAttribute("jobs", jobRepository.findAll());
         return "index";
     }
+@GetMapping("test")
+public String aTest(Model model) {
+    model.addAttribute(new Job());
+    return "add";
+}
+
 
     @GetMapping("add")
     public String displayAddJobForm(Model model) {
